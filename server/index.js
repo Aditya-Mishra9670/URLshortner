@@ -15,8 +15,8 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => console.log("✅ MongoDB Connected"))
-  .catch((err) => console.error("❌ MongoDB connection error:", err));
+  .then(() => console.log("MongoDB Connected"))
+  .catch((err) => console.error("MongoDB connection error:", err));
 
 // --- Schema & Model ---
 const urlSchema = new mongoose.Schema({
@@ -75,7 +75,7 @@ app.get("/:code", async (req, res) => {
   }
 });
 
-// 3️⃣ Get all shortened URLs with stats
+//Get all shortened URLs with stats
 app.get("/api/urls", async (req, res) => {
   try {
     const urls = await Url.find().sort({ createdAt: -1 }); // latest first
@@ -87,4 +87,4 @@ app.get("/api/urls", async (req, res) => {
 
 // --- Start Server ---
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(` Server running on http://localhost:${PORT}`));
