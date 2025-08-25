@@ -14,7 +14,8 @@
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
-    "mongoose": "^8.18.0",
-    "shortid": "^2.2.17"
+  "mongoose": "^8.18.0",
+  "shortid": "^2.2.17",
+  "helmet": "^7.0.0"
   }
 }
