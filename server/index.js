@@ -31,7 +31,7 @@ const Url = mongoose.model("Url", urlSchema);
 
 // --- API Routes ---
 
-// 1️⃣ Create short URL
+//  Create short URL
 app.post("/api/shorten", async (req, res) => {
   const { url } = req.body;
   if (!url) return res.status(400).json({ error: "URL is required" });
@@ -59,7 +59,7 @@ app.post("/api/shorten", async (req, res) => {
   }
 });
 
-// 2️⃣ Redirect to original + track visits
+// 2️ Redirect to original + track visits
 app.get("/:code", async (req, res) => {
   try {
     const urlData = await Url.findOne({ shortCode: req.params.code });
