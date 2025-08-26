@@ -13,9 +13,10 @@ app.use(helmet());
 app.use(express.json({ limit: "1mb" }));
 app.use(
   cors({
-    origin: isProduction ? process.env.CLIENT_ORIGIN : "*",
+    origin: 'https://urlshortner-tan.vercel.app',
+    methods: ['GET', 'POST', 'OPTIONS'],
     credentials: true,
-    methods: ["GET", "POST"],
+    allowedHeaders: ['Content-Type']
   })
 );
 
